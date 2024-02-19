@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Prefab\Prefab.csproj" />
+    <ProjectReference Include="..\AvroSerialize\AvroSerialize.csproj" />
   </ItemGroup>
 
 </Project>
