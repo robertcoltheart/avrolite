@@ -13,6 +13,10 @@ public abstract class AvroSchemaInfo
     {
     }
 
+    public Type Type { get; }
+
+    public string Schema { get; }
+
     public static AvroSchemaInfo CreateSchemaInfo<T>(AvroSerializerOptions? options = null)
     {
         throw new NotImplementedException();
