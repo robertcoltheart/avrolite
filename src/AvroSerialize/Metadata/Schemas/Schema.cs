@@ -20,7 +20,7 @@ public abstract class Schema
 
         if (element.ValueKind == JsonValueKind.String)
         {
-            var primitive = PrimitiveSchema.Parse(element.GetString());
+            var primitive = PrimitiveTypeSchema.Parse(element.GetString());
 
             if (primitive != null)
             {
@@ -37,13 +37,9 @@ public abstract class Schema
 
         if (element.ValueKind == JsonValueKind.Array)
         {
-
+            return UnionSchema.Parse(element);
         }
 
-        if (element.ValueKind == JsonValueKind.Object)
-        {
-
-        }
 
         throw new InvalidOperationException($"Invalid JSON for schema: {element}");
     }

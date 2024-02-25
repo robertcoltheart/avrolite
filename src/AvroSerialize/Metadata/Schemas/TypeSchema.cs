@@ -1,8 +1,8 @@
 ﻿namespace AvroSerialize.Metadata.Schemas;
 
-public abstract class UnnamedSchema : Schema
+public abstract class TypeSchema : Schema
 {
-    protected UnnamedSchema(SchemaType tag)
+    protected TypeSchema(SchemaType tag)
         : base(tag)
     {
     }

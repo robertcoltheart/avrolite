@@ -1,4 +1,5 @@
 ﻿using AvroSchemaGenerator;
+using AvroSerialize.Metadata;
 using AvroSerialize.Metadata.Schemas;
 using Xunit;
 
@@ -11,7 +12,7 @@ public class Tests
     {
         const string json = @"{ ""type"" : ""record"", ""namespace"" : ""Tutorialspoint"", ""name"" : ""Employee"", ""fields"" : [ { ""name"" : ""Name"" , ""type"" : ""string"" }, { ""name"" : ""Age"" , ""type"" : ""int"" } ] }";
 
-        var schema = Schema.Parse(json);
+        var schema = new JsonSchemaBuilder().Build(json);
     }
 
     [Fact]

@@ -2,5 +2,8 @@
 
 public class RecordSchema : NamedSchema
 {
-    
+    public RecordSchema(SchemaType tag)
+        : base(tag)
+    {
+    }
 }
