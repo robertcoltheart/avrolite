@@ -1,0 +1,73 @@
+{
+  "type" : "record",
+  "name" : "ClassModel",
+  "namespace" : "com.ibm.models",
+  "fields" : [ {
+    "name" : "version",
+    "type" : "string"
+  }, {
+    "name" : "id",
+    "type" : "int"
+  }, {
+    "name" : "timestamp",
+    "type" : {
+      "type" : "int",
+      "logicalType" : "date"
+    }
+  }, {
+    "name" : "isActive",
+    "type" : "boolean"
+  }, {
+    "name" : "module",
+    "type" : {
+      "type" : "record",
+      "name" : "TypeModule",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "int"
+      }, {
+        "name" : "timestamp",
+        "type" : {
+          "type" : "long",
+          "logicalType" : "local-timestamp-millis"
+        }
+      } ]
+    }
+  }, {
+    "name" : "constructor",
+    "type" : {
+      "type" : "record",
+      "name" : "Constructor",
+      "fields" : [ {
+        "name" : "id",
+        "type" : "int"
+      }, {
+        "name" : "type",
+        "type" : {
+          "type" : "enum",
+          "name" : "ParameterType",
+          "symbols" : [ "FIRST", "SECOND" ]
+        }
+      } ]
+    }
+  }, {
+    "name" : "parameters",
+    "type" : {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "Parameter",
+        "fields" : [ {
+          "name" : "id",
+          "type" : "int"
+        }, {
+          "name" : "type",
+          "type" : "ParameterType"
+        }, {
+          "name" : "limit",
+          "type" : "double"
+        } ]
+      }
+    }
+  } ]
+}

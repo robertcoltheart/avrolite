@@ -1,4 +1,4 @@
-﻿using AvroSerialize.Metadata;
+﻿using AvroSerialize.Serialization.Metadata;
 
 namespace AvroSerialize;
 

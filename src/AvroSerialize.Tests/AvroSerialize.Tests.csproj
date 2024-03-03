@@ -21,4 +21,10 @@
     <ProjectReference Include="..\AvroSerialize\AvroSerialize.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="ClassModel.avsc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

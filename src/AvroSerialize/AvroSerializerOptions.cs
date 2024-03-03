@@ -1,4 +1,6 @@
-﻿using AvroSerialize.Metadata;
+﻿using System.Text.Json;
+using AvroSerialize.Serialization;
+using AvroSerialize.Serialization.Metadata;
 
 namespace AvroSerialize;
 
@@ -14,17 +16,25 @@ public class AvroSerializerOptions
 
     public static AvroSerializerOptions Default { get; }
 
-    public AvroNamingPolicy? EnumNamingPolicy { get; set; }
-
     public AvroNamingPolicy? PropertyNamingPolicy { get; set; }
 
-    public bool IgnoreReadOnlyFields { get; set; }
+    public AvroNamingPolicy? TypeNamingPolicy { get; set; }
 
     public bool IgnoreReadOnlyProperties { get; set; }
 
     public bool IsReadOnly { get; }
 
     public bool PropertyNameCaseInsensitive { get; set; }
+
+    public bool WriteIndented { get; set; }
+
+    public IList<AvroConverter> Converters { get; }
+
+    public IAvroSchemaInfoResolver? SchemaInfoResolver { get; set; }
+
+    public IList<IAvroSchemaInfoResolver> SchmeaInfoResolverChain { get; }
+
+    public AvroEncoder Encoder { get; set; }
 
     public void MakeReadOnly()
     {
@@ -37,6 +47,11 @@ public class AvroSerializerOptions
     }
 
     public bool TryGetSchemaInfo(Type type, out AvroSchemaInfo? schemaInfo)
+    {
+        throw new NotImplementedException();
+    }
+
+    public AvroConverter GetConverter(Type type)
     {
         throw new NotImplementedException();
     }
