@@ -2,7 +2,7 @@
 
 namespace AvroSerialize.Serialization.Converters;
 
-public static class Utf8JsonReaderExtensions
+internal static class Utf8JsonReaderExtensions
 {
     public static T? ReadTracked<T>(this ref Utf8JsonReader reader, TrackedResources tracked, JsonSerializerOptions options)
     {

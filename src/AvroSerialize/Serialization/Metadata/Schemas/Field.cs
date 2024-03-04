@@ -1,6 +1,6 @@
 ﻿namespace AvroSerialize.Serialization.Metadata.Schemas;
 
-public class Field
+internal class Field
 {
     public string Name { get; set; }
 

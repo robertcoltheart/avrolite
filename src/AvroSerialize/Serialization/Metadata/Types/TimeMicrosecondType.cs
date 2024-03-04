@@ -1,6 +1,6 @@
 ﻿namespace AvroSerialize.Serialization.Metadata.Types;
 
-public class TimeMicrosecondType : LogicalUnixEpochType<TimeSpan>
+internal class TimeMicrosecondType : LogicalUnixEpochType<TimeSpan>
 {
 
 }

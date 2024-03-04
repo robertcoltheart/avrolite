@@ -4,14 +4,16 @@ using AvroSerialize.Serialization.Metadata.Schemas;
 
 namespace AvroSerialize.Serialization.Converters;
 
-public class SchemaConverterFactory : JsonConverterFactory
+internal class SchemaConverterFactory : JsonConverterFactory
 {
     private readonly Dictionary<Type, JsonConverter> converters = new()
     {
-        {typeof(RecordSchema), new RecordSchemaConverter()},
-        {typeof(Field), new FieldConverter()},
-        {typeof(LogicalSchema), new LogicalSchemaConverter()},
-        {typeof(EnumSchema), new EnumSchemaConverter()}
+        { typeof(RecordSchema), new RecordSchemaConverter() },
+        { typeof(Field), new FieldConverter() },
+        { typeof(LogicalSchema), new LogicalSchemaConverter() },
+        { typeof(EnumSchema), new EnumSchemaConverter() },
+        { typeof(ArraySchema), new ArraySchemaConverter() },
+        { typeof(UnionSchema), new UnionSchemaConverter() }
     };
 
     public override bool CanConvert(Type typeToConvert)

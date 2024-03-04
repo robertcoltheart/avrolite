@@ -1,6 +1,6 @@
 ﻿namespace AvroSerialize.Serialization.Metadata.Types;
 
-public abstract class LogicalType
+internal abstract class LogicalType
 {
 
 }

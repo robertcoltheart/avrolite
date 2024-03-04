@@ -1,6 +1,6 @@
 ﻿namespace AvroSerialize.Serialization.Metadata.Schemas;
 
-public class PrimitiveSchema : UnnamedSchema
+internal class PrimitiveSchema : UnnamedSchema
 {
     public PrimitiveSchema(SchemaType tag)
         : base(tag)

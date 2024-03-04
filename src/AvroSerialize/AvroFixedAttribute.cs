@@ -1,6 +1,12 @@
 ﻿namespace AvroSerialize;
 
+[AttributeUsage(AttributeTargets.Property)]
 public class AvroFixedAttribute : Attribute
 {
-    public int Size { get; set; }
+    public AvroFixedAttribute(int size)
+    {
+        Size = size;
+    }
+
+    public int Size { get; }
 }

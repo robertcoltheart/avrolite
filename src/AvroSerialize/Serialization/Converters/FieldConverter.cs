@@ -3,7 +3,7 @@ using AvroSerialize.Serialization.Metadata.Schemas;
 
 namespace AvroSerialize.Serialization.Converters;
 
-public class FieldConverter : TrackedConverter<Field>
+internal class FieldConverter : TrackedConverter<Field>
 {
     public override Field? Read(ref Utf8JsonReader reader, Type typeToConvert, TrackedResources tracked, JsonSerializerOptions options)
     {

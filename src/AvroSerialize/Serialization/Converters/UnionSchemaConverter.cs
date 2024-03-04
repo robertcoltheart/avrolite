@@ -1,0 +1,37 @@
+﻿using System.Text.Json;
+using AvroSerialize.Serialization.Metadata.Schemas;
+
+namespace AvroSerialize.Serialization.Converters;
+
+internal class UnionSchemaConverter : TrackedConverter<UnionSchema>
+{
+    public override UnionSchema? Read(ref Utf8JsonReader reader, Type typeToConvert, TrackedResources tracked, JsonSerializerOptions options)
+    {
+        reader.ReadArray();
+
+        var schema = new UnionSchema();
+        var schemas = new List<Schema>();
+        var unique = new HashSet<string>();
+
+        while (reader.IsInArray())
+        {
+            var unionSchema = reader.ReadTracked<Schema>(tracked, options);
+
+            if (!unique.Add(unionSchema!.Name))
+            {
+                throw new InvalidOperationException("Duplicate");
+            }
+
+            schemas.Add(unionSchema);
+        }
+
+        schema.Schemas = schemas.ToArray();
+
+        return schema;
+    }
+
+    public override void Write(Utf8JsonWriter writer, UnionSchema value, TrackedResources tracked, JsonSerializerOptions options)
+    {
+        throw new NotImplementedException();
+    }
+}

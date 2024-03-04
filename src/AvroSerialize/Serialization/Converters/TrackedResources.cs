@@ -2,9 +2,16 @@
 
 namespace AvroSerialize.Serialization.Converters;
 
-public class TrackedResources
+internal class TrackedResources
 {
-    public Dictionary<string, Schema> Schemas { get; } = new();
+    private readonly Dictionary<SchemaName, Schema> schemas = new();
 
-    public Stack<Schema> SchemaTree { get; } = new();
+    public string EnclosingNamespace { get; set; }
+
+    public Schema Get(string? name, string? nameSpace)
+    {
+        var schemaName = new SchemaName(name, nameSpace, EnclosingNamespace);
+
+        return schemas[schemaName];
+    }
 }

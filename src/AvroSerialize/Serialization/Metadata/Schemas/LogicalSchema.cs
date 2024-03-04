@@ -1,6 +1,6 @@
 ﻿namespace AvroSerialize.Serialization.Metadata.Schemas;
 
-public class LogicalSchema : UnnamedSchema
+internal class LogicalSchema : UnnamedSchema
 {
     public LogicalSchema(SchemaType tag)
         : base(tag)

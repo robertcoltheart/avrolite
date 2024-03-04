@@ -1,6 +1,6 @@
 ﻿namespace AvroSerialize.Serialization.Metadata.Schemas;
 
-public static class StringExtensions
+internal static class StringExtensions
 {
     public static string? TrimQuotes(this string? value)
     {

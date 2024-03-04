@@ -1,6 +1,6 @@
 ﻿namespace AvroSerialize.Serialization.Metadata.Schemas;
 
-public enum SchemaType
+internal enum SchemaType
 {
     Null,
     Boolean,

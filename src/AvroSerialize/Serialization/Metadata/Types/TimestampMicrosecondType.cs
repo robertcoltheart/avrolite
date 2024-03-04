@@ -1,6 +1,6 @@
 ﻿namespace AvroSerialize.Serialization.Metadata.Types;
 
-public class TimestampMicrosecondType : LogicalUnixEpochType<DateTime>
+internal class TimestampMicrosecondType : LogicalUnixEpochType<DateTime>
 {
 
 }

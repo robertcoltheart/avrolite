@@ -3,7 +3,7 @@ using AvroSerialize.Serialization.Metadata.Schemas;
 
 namespace AvroSerialize.Serialization.Converters;
 
-public class LogicalSchemaConverter : TrackedConverter<LogicalSchema>
+internal class LogicalSchemaConverter : TrackedConverter<LogicalSchema>
 {
     public override LogicalSchema? Read(ref Utf8JsonReader reader, Type typeToConvert, TrackedResources tracked, JsonSerializerOptions options)
     {

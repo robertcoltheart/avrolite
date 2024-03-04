@@ -3,17 +3,20 @@ using AvroSerialize.Serialization.Metadata.Schemas;
 
 namespace AvroSerialize.Serialization.Converters;
 
-public class RecordSchemaConverter : TrackedConverter<RecordSchema>
+internal class RecordSchemaConverter : TrackedConverter<RecordSchema>
 {
     public override RecordSchema? Read(ref Utf8JsonReader reader, Type typeToConvert, TrackedResources tracked, JsonSerializerOptions options)
     {
+        var type = reader.GetSchemaType();
+
         reader.ReadObject();
 
-        var schema = new RecordSchema(SchemaType.Record);
-        var fullName = reader.GetFullName();
+        var schema = type.Type == "error"
+            ? new RecordSchema(SchemaType.Error)
+            : new RecordSchema(SchemaType.Record);
 
-        tracked.Schemas[fullName] = schema;
-        tracked.SchemaTree.Push(schema);
+        //tracked.Schemas[fullName] = schema;
+        //tracked.SchemaTree.Push(schema);
 
         while (reader.IsInObject())
         {
@@ -21,10 +24,7 @@ public class RecordSchemaConverter : TrackedConverter<RecordSchema>
 
             if (property == "name")
             {
-                schema.SchemaName = new SchemaName
-                {
-                    Name = reader.GetString()!
-                };
+                schema.SchemaName = new SchemaName(reader.GetString()!, null, tracked.EnclosingNamespace);
             }
             else if (property == "namespace")
             {

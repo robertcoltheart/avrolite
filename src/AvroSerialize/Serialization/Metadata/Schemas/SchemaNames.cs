@@ -1,6 +1,6 @@
 ﻿namespace AvroSerialize.Serialization.Metadata.Schemas;
 
-public class SchemaNames
+internal class SchemaNames
 {
     public Dictionary<string, NamedSchema> Names { get; } = new();
 

@@ -1,9 +1,11 @@
 ﻿namespace AvroSerialize.Serialization.Metadata.Schemas;
 
-public class UnionSchema : UnnamedSchema
+internal class UnionSchema : UnnamedSchema
 {
-    public UnionSchema(SchemaType tag)
-        : base(tag)
+    public UnionSchema()
+        : base(SchemaType.Union)
     {
     }
+
+    public Schema[] Schemas { get; set; }
 }

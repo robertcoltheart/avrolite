@@ -1,6 +1,6 @@
 ﻿namespace AvroSerialize.Serialization.Metadata.Schemas;
 
-public class FixedSchema : NamedSchema
+internal class FixedSchema : NamedSchema
 {
     public FixedSchema(SchemaType tag)
         : base(tag)

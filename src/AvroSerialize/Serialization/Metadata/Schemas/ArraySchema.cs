@@ -1,9 +1,11 @@
 ﻿namespace AvroSerialize.Serialization.Metadata.Schemas;
 
-public class ArraySchema : UnnamedSchema
+internal class ArraySchema : UnnamedSchema
 {
-    public ArraySchema(SchemaType tag)
-        : base(tag)
+    public ArraySchema()
+        : base(SchemaType.Array)
     {
     }
+
+    public Schema ItemSchema { get; set; }
 }

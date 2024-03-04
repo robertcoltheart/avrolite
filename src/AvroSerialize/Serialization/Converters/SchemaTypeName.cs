@@ -1,6 +1,6 @@
 ﻿namespace AvroSerialize.Serialization.Converters;
 
-public struct SchemaTypeName
+internal struct SchemaTypeName
 {
     public string Type { get; set; }
 

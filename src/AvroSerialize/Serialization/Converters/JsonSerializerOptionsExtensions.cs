@@ -2,7 +2,7 @@
 
 namespace AvroSerialize.Serialization.Converters;
 
-public static class JsonSerializerOptionsExtensions
+internal static class JsonSerializerOptionsExtensions
 {
     public static TrackedConverter<T> GetTrackedConverter<T>(this JsonSerializerOptions options)
     {

@@ -1,6 +1,6 @@
 ﻿namespace AvroSerialize.Serialization.Metadata.Schemas;
 
-public class RecordSchema : NamedSchema
+internal class RecordSchema : NamedSchema
 {
     public RecordSchema(SchemaType tag)
         : base(tag)

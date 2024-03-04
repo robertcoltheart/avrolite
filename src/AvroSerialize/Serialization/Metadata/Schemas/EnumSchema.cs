@@ -1,11 +1,13 @@
 ﻿namespace AvroSerialize.Serialization.Metadata.Schemas;
 
-public class EnumSchema : NamedSchema
+internal class EnumSchema : NamedSchema
 {
-    public EnumSchema(SchemaType tag)
-        : base(tag)
+    public EnumSchema()
+        : base(SchemaType.Enumeration)
     {
     }
 
-    public List<string> Symbols { get; }
+    public List<string> Symbols { get; set; } = new();
+
+    public string Default { get; set; }
 }

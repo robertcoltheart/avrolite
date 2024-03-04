@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace AvroSerialize.Serialization.Converters;
 
-public abstract class TrackedConverter<T> : JsonConverter<T>
+internal abstract class TrackedConverter<T> : JsonConverter<T>
 {
     public abstract T? Read(ref Utf8JsonReader reader, Type typeToConvert, TrackedResources tracked, JsonSerializerOptions options);
 

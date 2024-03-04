@@ -1,5 +1,4 @@
 ﻿using System.Text.Json;
-using AvroSerialize.Serialization.Converters;
 using AvroSerialize.Serialization.Metadata.Schemas;
 
 namespace AvroSerialize.Serialization.Metadata;

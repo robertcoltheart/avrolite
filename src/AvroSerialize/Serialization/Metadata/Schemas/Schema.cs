@@ -1,8 +1,10 @@
-﻿using System.Text.Json;
+﻿using System.Text.Json.Serialization;
+using AvroSerialize.Serialization.Converters;
 
 namespace AvroSerialize.Serialization.Metadata.Schemas;
 
-public abstract class Schema
+[JsonConverter(typeof(SchemaConverter))]
+internal abstract class Schema
 {
     protected Schema(SchemaType tag)
     {

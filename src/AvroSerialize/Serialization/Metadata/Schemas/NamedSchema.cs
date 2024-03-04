@@ -1,6 +1,6 @@
 ﻿namespace AvroSerialize.Serialization.Metadata.Schemas;
 
-public class NamedSchema : Schema
+internal class NamedSchema : Schema
 {
     public NamedSchema(SchemaType tag)
         : base(tag)
@@ -8,6 +8,10 @@ public class NamedSchema : Schema
     }
 
     public SchemaName SchemaName { get; set; }
+
+    public List<string> Aliases { get; set; } = new();
+
+    public string Documentation { get; set; }
 
     public override string Name => SchemaName.Name;
 }

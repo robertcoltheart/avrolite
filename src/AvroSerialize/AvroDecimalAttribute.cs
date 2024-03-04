@@ -1,8 +1,15 @@
 ﻿namespace AvroSerialize;
 
+[AttributeUsage(AttributeTargets.Property)]
 public class AvroDecimalAttribute : Attribute
 {
-    public int Precision { get; set; }
+    public AvroDecimalAttribute(int precision, int scale)
+    {
+        Precision = precision;
+        Scale = scale;
+    }
 
-    public int Scale { get; set; }
+    public int Precision { get; }
+
+    public int Scale { get; }
 }
