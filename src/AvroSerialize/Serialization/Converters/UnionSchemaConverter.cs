@@ -10,7 +10,6 @@ internal class UnionSchemaConverter : TrackedConverter<UnionSchema>
         reader.ReadArray();
 
         var schema = new UnionSchema();
-        var schemas = new List<Schema>();
         var unique = new HashSet<string>();
 
         while (reader.IsInArray())
@@ -22,10 +21,8 @@ internal class UnionSchemaConverter : TrackedConverter<UnionSchema>
                 throw new InvalidOperationException("Duplicate");
             }
 
-            schemas.Add(unionSchema);
+            schema.Schemas.Add(unionSchema);
         }
-
-        schema.Schemas = schemas.ToArray();
 
         return schema;
     }

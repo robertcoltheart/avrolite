@@ -2,8 +2,10 @@
 
 internal class MapSchema : UnnamedSchema
 {
-    public MapSchema(SchemaType tag)
-        : base(tag)
+    public MapSchema()
+        : base(SchemaType.Map)
     {
     }
+
+    public Schema ValueSchema { get; set; }
 }

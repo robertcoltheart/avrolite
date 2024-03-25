@@ -14,4 +14,6 @@ internal abstract class Schema
     public SchemaType Tag { get; }
 
     public abstract string Name { get; }
+
+    public virtual string FullName => Name;
 }

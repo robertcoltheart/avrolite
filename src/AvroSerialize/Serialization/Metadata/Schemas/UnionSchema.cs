@@ -7,5 +7,5 @@ internal class UnionSchema : UnnamedSchema
     {
     }
 
-    public Schema[] Schemas { get; set; }
+    public List<Schema> Schemas { get; set; } = new();
 }

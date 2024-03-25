@@ -9,7 +9,7 @@ internal class LogicalSchemaConverter : TrackedConverter<LogicalSchema>
     {
         reader.ReadObject();
 
-        var schema = new LogicalSchema(SchemaType.Logical);
+        var schema = new LogicalSchema();
 
         while (reader.IsInObject())
         {

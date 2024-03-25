@@ -11,7 +11,11 @@ internal class NamedSchema : Schema
 
     public List<string> Aliases { get; set; } = new();
 
-    public string Documentation { get; set; }
+    public string? Documentation { get; set; }
 
     public override string Name => SchemaName.Name;
+
+    public string Namespace => SchemaName.Namespace;
+
+    public override string FullName => SchemaName.FullName;
 }

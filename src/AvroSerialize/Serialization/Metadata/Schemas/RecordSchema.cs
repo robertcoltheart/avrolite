@@ -7,9 +7,5 @@ internal class RecordSchema : NamedSchema
     {
     }
 
-    public string Documentation { get; set; }
-
-    public List<string> Aliases { get; set; } = new();
-
     public List<Field> Fields { get; set; } = new();
 }

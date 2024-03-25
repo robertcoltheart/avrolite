@@ -25,7 +25,7 @@ internal class FieldConverter : TrackedConverter<Field>
             }
             else if (property == "type")
             {
-                field.Type = reader.ReadTracked<Schema>(tracked, options)!;
+                field.Schema = reader.ReadTracked<Schema>(tracked, options)!;
             }
             else if (property == "aliases")
             {

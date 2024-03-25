@@ -2,8 +2,10 @@
 
 internal class FixedSchema : NamedSchema
 {
-    public FixedSchema(SchemaType tag)
-        : base(tag)
+    public FixedSchema()
+        : base(SchemaType.Fixed)
     {
     }
+
+    public int Size { get; set; }
 }
