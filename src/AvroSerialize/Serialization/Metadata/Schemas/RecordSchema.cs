@@ -7,8 +7,6 @@ internal class RecordSchema : NamedSchema
     {
     }
 
-    public string Namespace { get; set; }
-
     public string Documentation { get; set; }
 
     public List<string> Aliases { get; set; } = new();

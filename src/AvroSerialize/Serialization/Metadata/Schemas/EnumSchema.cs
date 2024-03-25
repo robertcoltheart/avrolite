@@ -9,5 +9,5 @@ internal class EnumSchema : NamedSchema
 
     public List<string> Symbols { get; set; } = new();
 
-    public string Default { get; set; }
+    public string? Default { get; set; }
 }

@@ -5,7 +5,7 @@ namespace AvroSerialize.Serialization.Converters;
 
 internal class EnumSchemaConverter : TrackedConverter<EnumSchema>
 {
-    public override EnumSchema? Read(ref Utf8JsonReader reader, Type typeToConvert, TrackedResources tracked, JsonSerializerOptions options)
+    public override EnumSchema Read(ref Utf8JsonReader reader, Type typeToConvert, TrackedResources tracked, JsonSerializerOptions options)
     {
         reader.ReadObject();
 
@@ -17,11 +17,11 @@ internal class EnumSchemaConverter : TrackedConverter<EnumSchema>
 
             if (property == "name")
             {
-                //schema.Name = reader.GetString();
+                schema.SchemaName.Name = reader.GetString()!;
             }
             else if (property == "namespace")
             {
-                //schema.SchemaName.Namespace = reader.GetString();
+                schema.SchemaName.Namespace = reader.GetString()!;
             }
             else if (property == "aliases")
             {
@@ -47,11 +47,38 @@ internal class EnumSchemaConverter : TrackedConverter<EnumSchema>
             reader.Read();
         }
 
+        Validate(schema);
+
         return schema;
     }
 
     public override void Write(Utf8JsonWriter writer, EnumSchema value, TrackedResources tracked, JsonSerializerOptions options)
     {
-        throw new NotImplementedException();
+        writer.WriteStartObject();
+
+        writer.WritePropertyName("symbols");
+        JsonSerializer.Serialize(value.Symbols);
+
+        writer.WriteStringOrDefault("default", value.Default);
+
+        writer.WriteEndObject();
+    }
+
+    private void Validate(EnumSchema schema)
+    {
+        if (!schema.Symbols.Any())
+        {
+            throw new SchemaParseException($"Enum has no symbols: {schema.Name}");
+        }
+
+        if (schema.Symbols.GroupBy(x => x).Any(x => x.Count() > 1))
+        {
+            throw new SchemaParseException($"Enum has duplicate symbols: {schema.Name}");
+        }
+
+        if (!string.IsNullOrEmpty(schema.Default) && !schema.Symbols.Contains(schema.Default))
+        {
+            throw new SchemaParseException($"Default symbol {schema.Default} not found in {schema.Name}");
+        }
     }
 }

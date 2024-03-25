@@ -1,7 +1,11 @@
 ﻿namespace AvroSerialize.Serialization.Metadata.Schemas;
 
-internal struct SchemaName
+internal class SchemaName
 {
+    public SchemaName()
+    {
+    }
+
     public SchemaName(string? name, string? nameSpace, string enclosingNamespace)
     {
         Name = name!;
@@ -21,11 +25,11 @@ internal struct SchemaName
             : FullName = $"{Namespace}.{Name}";
     }
 
-    public string Name { get; }
+    public string Name { get; set; }
 
-    public string Namespace { get; }
+    public string Namespace { get; set; }
 
-    public string EnclosingNamespace { get; }
+    public string EnclosingNamespace { get; set; }
 
     public string FullName { get; }
 

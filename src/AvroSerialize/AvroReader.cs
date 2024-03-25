@@ -1,13 +1,7 @@
-﻿using System.Buffers;
-
-namespace AvroSerialize;
+﻿namespace AvroSerialize;
 
 public ref struct AvroReader
 {
-    public AvroReader(ReadOnlySequence<byte> avroData)
-    {
-    }
-
     public AvroReader(ReadOnlySpan<byte> avroData)
     {
     }

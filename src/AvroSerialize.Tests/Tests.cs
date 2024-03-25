@@ -13,5 +13,6 @@ public class Tests
         var json = File.ReadAllText("ClassModel.avsc");
 
         var schema = AvroSchemaInfo.Parse(json);
+        var result = schema.Schema;
     }
 }

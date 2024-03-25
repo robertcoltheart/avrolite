@@ -24,11 +24,11 @@ internal class RecordSchemaConverter : TrackedConverter<RecordSchema>
 
             if (property == "name")
             {
-                schema.SchemaName = new SchemaName(reader.GetString()!, null, tracked.EnclosingNamespace);
+                schema.SchemaName.Name = reader.GetString()!;
             }
             else if (property == "namespace")
             {
-                schema.Namespace = reader.GetString()!;
+                schema.SchemaName.Namespace = reader.GetString()!;
             }
             else if (property == "doc")
             {
