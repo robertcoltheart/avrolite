@@ -3,7 +3,7 @@ using AvroSerialize.Serialization.Converters;
 
 namespace AvroSerialize.Serialization.Metadata;
 
-public static class JsonSerializerOptionsExtensions
+internal static class JsonSerializerOptionsExtensions
 {
     public static JsonSerializerOptions AddAvroConverter(this JsonSerializerOptions options)
     {

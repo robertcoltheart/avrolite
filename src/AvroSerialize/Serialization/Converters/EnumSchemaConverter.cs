@@ -3,68 +3,33 @@ using AvroSerialize.Serialization.Metadata.Schemas;
 
 namespace AvroSerialize.Serialization.Converters;
 
-internal class EnumSchemaConverter : TrackedConverter<EnumSchema>
+internal class EnumSchemaConverter : NamedSchemaConverter<EnumSchema>
 {
-    public override EnumSchema Read(ref Utf8JsonReader reader, Type typeToConvert, TrackedResources tracked, JsonSerializerOptions options)
+    public override void ReadField(ref Utf8JsonReader reader, EnumSchema schema, string property, TrackedResources tracked, JsonSerializerOptions options)
     {
-        reader.ReadObject();
-
-        var schema = new EnumSchema();
-
-        while (reader.IsInObject())
+        if (property == "symbols")
         {
-            var property = reader.ReadMember();
-
-            if (property == "name")
-            {
-                schema.SchemaName.Name = reader.GetString()!;
-            }
-            else if (property == "namespace")
-            {
-                schema.SchemaName.Namespace = reader.GetString()!;
-            }
-            else if (property == "aliases")
-            {
-                schema.Aliases = JsonSerializer.Deserialize<List<string>>(ref reader, options)!;
-            }
-            else if (property == "doc")
-            {
-                schema.Documentation = reader.GetString()!;
-            }
-            else if (property == "symbols")
-            {
-                schema.Symbols = JsonSerializer.Deserialize<List<string>>(ref reader, options)!;
-            }
-            else if (property == "default")
-            {
-                schema.Default = reader.GetString()!;
-            }
-            else
-            {
-                reader.Skip();
-            }
-
-            reader.Read();
+            schema.Symbols = JsonSerializer.Deserialize<List<string>>(ref reader, options)!;
         }
-
-        Validate(schema);
-
-        return schema;
+        else if (property == "default")
+        {
+            schema.Default = reader.GetString();
+        }
+        else
+        {
+            reader.Skip();
+        }
     }
 
-    public override void Write(Utf8JsonWriter writer, EnumSchema value, TrackedResources tracked, JsonSerializerOptions options)
+    public override void WriteFields(Utf8JsonWriter writer, EnumSchema value, TrackedResources tracked, JsonSerializerOptions options)
     {
-        writer.WriteStartObject();
-
         writer.WritePropertyName("symbols");
-        JsonSerializer.Serialize(value.Symbols);
+        JsonSerializer.Serialize(value.Symbols, options);
 
         writer.WriteStringOrDefault("default", value.Default);
-
-        writer.WriteEndObject();
     }
 
-    private void Validate(EnumSchema schema)
+    public override void Validate(EnumSchema schema)
     {
         if (!schema.Symbols.Any())
         {

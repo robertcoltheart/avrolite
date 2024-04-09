@@ -9,7 +9,7 @@ internal class NamedSchema : Schema
 
     public SchemaName SchemaName { get; set; } = new();
 
-    public List<string> Aliases { get; set; } = new();
+    public List<string>? Aliases { get; set; } = new();
 
     public string? Documentation { get; set; }
 

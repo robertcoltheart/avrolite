@@ -27,11 +27,20 @@ internal class ArraySchemaConverter : TrackedConverter<ArraySchema>
             reader.Read();
         }
 
+        if (schema.ItemSchema == null)
+        {
+            throw new InvalidOperationException("Array does not have 'items' property");
+        }
+
         return schema;
     }
 
     public override void Write(Utf8JsonWriter writer, ArraySchema value, TrackedResources tracked, JsonSerializerOptions options)
     {
-        throw new NotImplementedException();
+        writer.WriteStartObject();
+        writer.WriteString("type", value.Tag.ToStringType());
+        writer.WritePropertyName("items");
+        writer.WriteTracked(value.ItemSchema, tracked, options);
+        writer.WriteEndObject();
     }
 }

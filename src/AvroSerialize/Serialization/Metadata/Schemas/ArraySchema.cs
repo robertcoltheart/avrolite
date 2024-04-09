@@ -7,5 +7,5 @@ internal class ArraySchema : UnnamedSchema
     {
     }
 
-    public Schema ItemSchema { get; set; }
+    public Schema? ItemSchema { get; set; }
 }

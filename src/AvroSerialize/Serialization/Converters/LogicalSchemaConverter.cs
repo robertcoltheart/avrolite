@@ -36,6 +36,12 @@ internal class LogicalSchemaConverter : TrackedConverter<LogicalSchema>
 
     public override void Write(Utf8JsonWriter writer, LogicalSchema value, TrackedResources tracked, JsonSerializerOptions options)
     {
-        throw new NotImplementedException();
+        writer.WriteStartObject();
+
+        writer.WritePropertyName("type");
+        writer.WriteTracked(value.BaseSchema, tracked, options);
+        writer.WriteString("logicalType", value.LogicalTypeName);
+
+        writer.WriteEndObject();
     }
 }
