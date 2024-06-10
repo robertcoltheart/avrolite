@@ -49,6 +49,8 @@ internal class SchemaConverter : TrackedConverter<Schema>
                 return reader.ReadTracked<LogicalSchema>(tracked, options);
             }
 
+            reader.Skip();
+
             return type.Type switch
             {
                 "null" => new PrimitiveSchema(SchemaType.Null),
