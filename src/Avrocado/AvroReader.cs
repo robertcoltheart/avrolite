@@ -6,6 +6,12 @@ public ref struct AvroReader
     {
     }
 
+    public long BytesConsumed { get; } = 0;
+
+    public int CurrentDepth { get; } = 0;
+
+    public AvroTokenType TokenType { get; } = AvroTokenType.None;
+
     public bool Read()
     {
         throw new NotImplementedException();
@@ -22,6 +28,11 @@ public ref struct AvroReader
     }
 
     public bool TryGetInt32(out int value)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool TrySkip()
     {
         throw new NotImplementedException();
     }
