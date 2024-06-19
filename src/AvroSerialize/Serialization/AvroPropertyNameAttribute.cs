@@ -1,7 +1,7 @@
-﻿namespace AvroSerialize;
+﻿namespace AvroSerialize.Serialization;
 
 [AttributeUsage(AttributeTargets.Property)]
-public class AvroPropertyNameAttribute : Attribute
+public class AvroPropertyNameAttribute : AvroAttribute
 {
     public AvroPropertyNameAttribute(string name)
     {

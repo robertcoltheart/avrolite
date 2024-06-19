@@ -1,7 +1,7 @@
-﻿namespace AvroSerialize;
+﻿namespace AvroSerialize.Serialization;
 
 [AttributeUsage(AttributeTargets.Property)]
-public class AvroDecimalAttribute : Attribute
+public class AvroDecimalAttribute : AvroAttribute
 {
     public AvroDecimalAttribute(int precision, int scale)
     {
