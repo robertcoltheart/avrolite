@@ -5,11 +5,28 @@ namespace AvroSerialize.Serialization.Converters;
 
 internal class SchemaConverter : TrackedConverter<Schema>
 {
+    private readonly Dictionary<string, Func<PrimitiveSchema>> primitiveTypes = new()
+    {
+        { "null", () => new PrimitiveSchema(SchemaType.Null) },
+        { "boolean", () => new PrimitiveSchema(SchemaType.Boolean) },
+        { "int", () => new PrimitiveSchema(SchemaType.Int) },
+        { "long", () => new PrimitiveSchema(SchemaType.Long) },
+        { "float", () => new PrimitiveSchema(SchemaType.Float) },
+        { "double", () => new PrimitiveSchema(SchemaType.Double) },
+        { "bytes", () => new PrimitiveSchema(SchemaType.Bytes) },
+        { "string", () => new PrimitiveSchema(SchemaType.String) }
+    };
+
     public override Schema? Read(ref Utf8JsonReader reader, Type typeToConvert, TrackedResources tracked, JsonSerializerOptions options)
     {
         if (reader.TokenType == JsonTokenType.String)
         {
             var type = reader.GetString();
+
+            if ( primitiveTypes.TryGetValue(type, out var factory))
+            {
+                return factory();
+            }
 
             return type switch
             {
