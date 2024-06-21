@@ -2,14 +2,11 @@
 using Avrocado.Benchmark;
 using Avrocado.Serialization.Metadata;
 using Avrocado.Serialization.Metadata.Schemas;
-using BenchmarkDotNet.Running;
 
-//BenchmarkRunner.Run<SerializeBenchmark>();
-
-var data = File.ReadAllBytes(@"C:\Temp\avro.dat");
+var data = File.ReadAllBytes(args[0]);
 
 var recordSchema = new RecordSchema(SchemaType.Record);
-recordSchema.SchemaName = new SchemaName("Agreement", "com.mgl.margining", "com.mgl.margining");
+recordSchema.SchemaName = new SchemaName(args[1], args[2], args[2]);
 recordSchema.Fields.Add(new Field
 {
     Name = "id",
