@@ -1,6 +1,6 @@
 ﻿namespace Avrocado.Serialization.Metadata.Schemas;
 
-internal enum SchemaType
+public enum SchemaType
 {
     Null,
     Boolean,

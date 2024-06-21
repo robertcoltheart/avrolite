@@ -1,4 +1,5 @@
-﻿using AvroSchemaGenerator;
+﻿using System.Text.Json;
+using AvroSchemaGenerator;
 using Avrocado.Serialization.Metadata;
 using Avrocado.Serialization.Metadata.Schemas;
 using Xunit;

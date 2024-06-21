@@ -4,7 +4,7 @@ using Avrocado.Serialization.Converters;
 namespace Avrocado.Serialization.Metadata.Schemas;
 
 [JsonConverter(typeof(SchemaConverter))]
-internal abstract class Schema
+public abstract class Schema
 {
     protected Schema(SchemaType tag)
     {
@@ -16,4 +16,6 @@ internal abstract class Schema
     public abstract string Name { get; }
 
     public virtual string FullName => Name;
+
+    public Schema? Parent { get; set; }
 }

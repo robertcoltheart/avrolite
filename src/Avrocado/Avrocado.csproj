@@ -6,7 +6,7 @@
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <!--<GenerateDocumentationFile>true</GenerateDocumentationFile>-->
 
     <Authors>robertcoltheart</Authors>
     <Description>A thing that does something</Description>
@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <InternalsVisibleTo Include="Avrocado.Tests" />
+    <InternalsVisibleTo Include="Avrocado.Benchmark" />
   </ItemGroup>
 
 </Project>

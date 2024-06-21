@@ -8,9 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AvroConvert" Version="3.4.5" />
-    <PackageReference Include="AvroSchemaGenerator" Version="2.10.0" />
     <PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Avrocado\Avrocado.csproj" />
   </ItemGroup>
 
 </Project>

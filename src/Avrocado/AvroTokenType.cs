@@ -1,6 +1,9 @@
 ﻿namespace Avrocado;
 
-public enum AvroTokenType
+public enum AvroTokenType : byte
 {
-    None
+    None,
+    StartRecord,
+    Number,
+    String
 }
