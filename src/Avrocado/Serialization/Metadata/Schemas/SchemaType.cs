@@ -18,4 +18,5 @@ public enum SchemaType
     Fixed,
     Error,
     Logical,
+    Field
 }

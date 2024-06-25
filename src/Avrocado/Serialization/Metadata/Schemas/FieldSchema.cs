@@ -1,14 +1,13 @@
 ﻿namespace Avrocado.Serialization.Metadata.Schemas;
 
-internal class Field
+internal class FieldSchema : NamedSchema
 {
-    public string Name { get; set; }
-
-    public string? Documentation { get; set; }
+    public FieldSchema()
+        : base(SchemaType.Field)
+    {
+    }
 
     public Schema Schema { get; set; }
-
-    public List<string> Aliases { get; set; } = new();
 
     public SortOrder? Order { get; set; }
 

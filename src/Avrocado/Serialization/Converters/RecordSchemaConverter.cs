@@ -40,7 +40,7 @@ internal class RecordSchemaConverter : TrackedConverter<RecordSchema>
             }
             else if (property == "fields")
             {
-                schema.Fields = reader.ReadTrackedList<Field>(tracked, options);
+                schema.Fields = reader.ReadTrackedList<FieldSchema>(tracked, options);
             }
             else
             {

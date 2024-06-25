@@ -17,5 +17,5 @@ public abstract class Schema
 
     public virtual string FullName => Name;
 
-    public Schema? Parent { get; set; }
+    public Schema? Next { get; set; }
 }

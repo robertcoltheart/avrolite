@@ -9,7 +9,7 @@ internal class SchemaConverterFactory : JsonConverterFactory
     private readonly Dictionary<Type, JsonConverter> converters = new()
     {
         { typeof(RecordSchema), new RecordSchemaConverter() },
-        { typeof(Field), new FieldConverter() },
+        { typeof(FieldSchema), new FieldConverter() },
         { typeof(LogicalSchema), new LogicalSchemaConverter() },
         { typeof(EnumSchema), new EnumSchemaConverter() },
         { typeof(ArraySchema), new ArraySchemaConverter() },

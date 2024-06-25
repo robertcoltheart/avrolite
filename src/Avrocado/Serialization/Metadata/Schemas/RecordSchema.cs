@@ -7,5 +7,5 @@ internal class RecordSchema : NamedSchema
     {
     }
 
-    public List<Field> Fields { get; set; } = new();
+    public List<FieldSchema> Fields { get; set; } = new();
 }

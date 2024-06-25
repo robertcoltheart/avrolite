@@ -3,13 +3,13 @@ using Avrocado.Serialization.Metadata.Schemas;
 
 namespace Avrocado.Serialization.Converters;
 
-internal class FieldConverter : TrackedConverter<Field>
+internal class FieldConverter : TrackedConverter<FieldSchema>
 {
-    public override Field? Read(ref Utf8JsonReader reader, Type typeToConvert, TrackedResources tracked, JsonSerializerOptions options)
+    public override FieldSchema? Read(ref Utf8JsonReader reader, Type typeToConvert, TrackedResources tracked, JsonSerializerOptions options)
     {
         reader.ReadObject();
 
-        var field = new Field();
+        var field = new FieldSchema();
 
         while (reader.IsInObject())
         {
@@ -17,7 +17,7 @@ internal class FieldConverter : TrackedConverter<Field>
 
             if (property == "name")
             {
-                field.Name = reader.GetString()!;
+                //field.Name = reader.GetString()!;
             }
             else if (property == "doc")
             {
@@ -42,7 +42,7 @@ internal class FieldConverter : TrackedConverter<Field>
         return field;
     }
 
-    public override void Write(Utf8JsonWriter writer, Field value, TrackedResources tracked, JsonSerializerOptions options)
+    public override void Write(Utf8JsonWriter writer, FieldSchema value, TrackedResources tracked, JsonSerializerOptions options)
     {
         throw new NotImplementedException();
     }
