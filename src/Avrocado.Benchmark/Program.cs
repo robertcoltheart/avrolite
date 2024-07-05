@@ -1,4 +1,6 @@
-﻿using Avrocado;
+﻿using Avro.Reflect;
+using Avrocado;
+using Avrocado.Benchmark.Models;
 using Avrocado.Serialization.Metadata;
 using Avrocado.Serialization.Metadata.Schemas;
 
