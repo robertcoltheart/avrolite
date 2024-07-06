@@ -7,7 +7,7 @@ namespace Avrocado.Benchmark;
 
 public class TestWriter
 {
-    public Stream Write(AvroModel model)
+    public byte[] Write(AvroModel model)
     {
         var stream = new MemoryStream();
 
@@ -27,6 +27,6 @@ public class TestWriter
         var writer = new ReflectWriter<AvroModel>(schema);
         writer.Write(model, new BinaryEncoder(stream));
 
-        return stream;
+        return stream.ToArray();
     }
 }

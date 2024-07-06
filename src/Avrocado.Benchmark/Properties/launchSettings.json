@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "Avrocado.Benchmark": {
-      "commandName": "Project",
-      "commandLineArgs": "\"C:\\Temp\\avro.txt\" Record com.org"
-    }
-  }
-}

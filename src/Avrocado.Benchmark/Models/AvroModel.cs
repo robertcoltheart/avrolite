@@ -1,10 +1,15 @@
-﻿namespace Avrocado.Benchmark.Models;
+﻿using Avro.Reflect;
+
+namespace Avrocado.Benchmark.Models;
 
 public class AvroModel
 {
-    public ChildModel Child { get; set; }
+    [AvroField("id")]
+    public int Id { get; set; }
 
-    //public ChildModel[] Children { get; set; }
+    [AvroField("address")]
+    public string? Address { get; set; }
 
-    //public List<int> Integers { get; set; }
+    [AvroField("names")]
+    public List<string> Names { get; set; }
 }

@@ -8,5 +8,5 @@ public class ChildModel
 
     public string Name { get; set; }
 
-    //public List<string> Objects { get; set; }
+    public List<string> Objects { get; set; }
 }
