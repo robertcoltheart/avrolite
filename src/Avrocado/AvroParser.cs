@@ -63,7 +63,7 @@ internal static class AvroParser
 
         var longValue = (long)n;
 
-        value = (-(longValue & 0x01L)) ^ ((longValue >> 1) & 0x7fffffffffffffffL);
+        value = -(longValue & 0x01L) ^ ((longValue >> 1) & 0x7fffffffffffffffL);
         bytesConsumed = index + 1;
 
         return true;
