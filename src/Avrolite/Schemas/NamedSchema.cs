@@ -1,4 +1,4 @@
-﻿namespace Avrolite.Serialization.Metadata.Schemas;
+﻿namespace Avrolite.Schemas;
 
 internal class NamedSchema : Schema
 {

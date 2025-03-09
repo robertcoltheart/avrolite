@@ -1,6 +1,6 @@
-﻿using Avrolite.Serialization;
+﻿using Avrolite.Schemas;
+using Avrolite.Serialization;
 using Avrolite.Serialization.Metadata;
-using Avrolite.Serialization.Metadata.Schemas;
 using Xunit;
 
 namespace Avrolite.Tests.Serialization.Metadata;

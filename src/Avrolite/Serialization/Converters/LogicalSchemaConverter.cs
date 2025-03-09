@@ -1,5 +1,5 @@
 ﻿using System.Text.Json;
-using Avrolite.Serialization.Metadata.Schemas;
+using Avrolite.Schemas;
 
 namespace Avrolite.Serialization.Converters;
 

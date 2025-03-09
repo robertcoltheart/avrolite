@@ -1,8 +1,8 @@
 ﻿using Avrolite;
 using Avrolite.Benchmark;
 using Avrolite.Benchmark.Models;
+using Avrolite.Schemas;
 using Avrolite.Serialization.Metadata;
-using Avrolite.Serialization.Metadata.Schemas;
 
 var data = CreateAvroStream();
 

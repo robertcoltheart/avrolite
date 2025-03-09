@@ -1,6 +1,6 @@
 ﻿using Avrolite.Serialization.Metadata.Types;
 
-namespace Avrolite.Serialization.Metadata.Schemas;
+namespace Avrolite.Schemas;
 
 internal class LogicalSchema : UnnamedSchema
 {

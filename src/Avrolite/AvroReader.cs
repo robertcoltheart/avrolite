@@ -1,4 +1,4 @@
-﻿using Avrolite.Serialization.Metadata.Schemas;
+﻿using Avrolite.Schemas;
 
 namespace Avrolite;
 

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using Avrolite.Serialization.Metadata.Schemas;
+using Avrolite.Schemas;
 
 namespace Avrolite.Serialization.Converters;
 

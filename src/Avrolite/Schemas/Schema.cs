@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 using Avrolite.Serialization.Converters;
 
-namespace Avrolite.Serialization.Metadata.Schemas;
+namespace Avrolite.Schemas;
 
 [JsonConverter(typeof(SchemaConverter))]
 public abstract class Schema
