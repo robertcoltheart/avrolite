@@ -1,6 +1,3 @@
 ﻿namespace Avrolite.Serialization.Metadata.Types;
 
-internal class UuidType : LogicalType
-{
-
-}
+internal class UuidType : LogicalType;

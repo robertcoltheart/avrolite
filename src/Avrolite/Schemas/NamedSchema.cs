@@ -1,12 +1,7 @@
 ﻿namespace Avrolite.Schemas;
 
-internal class NamedSchema : Schema
+internal class NamedSchema(SchemaType tag) : Schema(tag)
 {
-    public NamedSchema(SchemaType tag)
-        : base(tag)
-    {
-    }
-
     public SchemaName SchemaName { get; set; } = new();
 
     public List<string>? Aliases { get; set; } = new();

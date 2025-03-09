@@ -1,12 +1,7 @@
 ﻿namespace Avrolite.Serialization;
 
 [AttributeUsage(AttributeTargets.Property)]
-public class AvroPropertyNameAttribute : AvroAttribute
+public class AvroPropertyNameAttribute(string name) : AvroAttribute
 {
-    public AvroPropertyNameAttribute(string name)
-    {
-        Name = name;
-    }
-
-    public string Name { get; }
+    public string Name { get; } = name;
 }

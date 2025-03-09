@@ -1,11 +1,6 @@
 ﻿namespace Avrolite.Schemas;
 
-internal class PrimitiveSchema : UnnamedSchema
+internal class PrimitiveSchema(SchemaType tag) : UnnamedSchema(tag)
 {
-    public PrimitiveSchema(SchemaType tag)
-        : base(tag)
-    {
-    }
-
     public string Type { get; set; }
 }

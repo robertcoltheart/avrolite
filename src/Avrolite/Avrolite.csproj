@@ -7,7 +7,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <!--<GenerateDocumentationFile>true</GenerateDocumentationFile>-->
+  </PropertyGroup>
 
+  <PropertyGroup>
     <Authors>robertcoltheart</Authors>
     <Description>A thing that does something</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -19,12 +21,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="README.md" Pack="true" PackagePath="\" />
+    <InternalsVisibleTo Include="Avrolite.Tests" />
+    <InternalsVisibleTo Include="Avrolite.Benchmark" />
   </ItemGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="Avrolite.Tests" />
-    <InternalsVisibleTo Include="Avrolite.Benchmark" />
+    <None Include="..\..\README.md" Link="README.md" />
   </ItemGroup>
 
 </Project>

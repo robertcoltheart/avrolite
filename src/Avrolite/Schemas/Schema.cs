@@ -4,14 +4,9 @@ using Avrolite.Serialization.Converters;
 namespace Avrolite.Schemas;
 
 [JsonConverter(typeof(SchemaConverter))]
-public abstract class Schema
+public abstract class Schema(SchemaType tag)
 {
-    protected Schema(SchemaType tag)
-    {
-        Tag = tag;
-    }
-
-    public SchemaType Tag { get; }
+    public SchemaType Tag { get; } = tag;
 
     public abstract string Name { get; }
 

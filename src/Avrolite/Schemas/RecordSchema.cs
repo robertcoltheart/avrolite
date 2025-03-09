@@ -1,11 +1,6 @@
 ﻿namespace Avrolite.Schemas;
 
-internal class RecordSchema : NamedSchema
+internal class RecordSchema(SchemaType tag) : NamedSchema(tag)
 {
-    public RecordSchema(SchemaType tag)
-        : base(tag)
-    {
-    }
-
     public List<FieldSchema> Fields { get; set; } = new();
 }

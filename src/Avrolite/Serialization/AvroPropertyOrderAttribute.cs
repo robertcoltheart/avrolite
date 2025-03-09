@@ -1,12 +1,7 @@
 ﻿namespace Avrolite.Serialization;
 
 [AttributeUsage(AttributeTargets.Property)]
-public class AvroPropertyOrderAttribute : AvroAttribute
+public class AvroPropertyOrderAttribute(int order) : AvroAttribute
 {
-    public AvroPropertyOrderAttribute(int order)
-    {
-        Order = order;
-    }
-
-    public int Order { get; }
+    public int Order { get; } = order;
 }

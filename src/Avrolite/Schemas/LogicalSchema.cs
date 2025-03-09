@@ -2,13 +2,8 @@
 
 namespace Avrolite.Schemas;
 
-internal class LogicalSchema : UnnamedSchema
+internal class LogicalSchema() : UnnamedSchema(SchemaType.Logical)
 {
-    public LogicalSchema()
-        : base(SchemaType.Logical)
-    {
-    }
-
     public Schema BaseSchema { get; set; }
 
     public string LogicalTypeName { get; set; }

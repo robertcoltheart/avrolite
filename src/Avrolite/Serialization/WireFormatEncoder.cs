@@ -1,6 +1,3 @@
 ﻿namespace Avrolite.Serialization;
 
-public class WireFormatEncoder : AvroEncoder
-{
-
-}
+public class WireFormatEncoder : AvroEncoder;

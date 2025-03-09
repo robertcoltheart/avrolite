@@ -1,6 +1,3 @@
 ﻿namespace Avrolite.Serialization.Metadata.Types;
 
-internal class TimestampMillisecondType : LogicalUnixEpochType<DateTime>
-{
-
-}
+internal class TimestampMillisecondType : LogicalUnixEpochType<DateTime>;

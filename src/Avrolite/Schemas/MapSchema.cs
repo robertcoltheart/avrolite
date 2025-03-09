@@ -1,11 +1,6 @@
 ﻿namespace Avrolite.Schemas;
 
-internal class MapSchema : UnnamedSchema
+internal class MapSchema() : UnnamedSchema(SchemaType.Map)
 {
-    public MapSchema()
-        : base(SchemaType.Map)
-    {
-    }
-
     public Schema ValueSchema { get; set; }
 }

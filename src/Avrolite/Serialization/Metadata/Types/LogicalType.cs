@@ -1,6 +1,3 @@
 ﻿namespace Avrolite.Serialization.Metadata.Types;
 
-internal abstract class LogicalType
-{
-
-}
+internal abstract class LogicalType;

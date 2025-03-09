@@ -1,11 +1,6 @@
 ﻿namespace Avrolite.Schemas;
 
-internal class UnionSchema : UnnamedSchema
+internal class UnionSchema() : UnnamedSchema(SchemaType.Union)
 {
-    public UnionSchema()
-        : base(SchemaType.Union)
-    {
-    }
-
     public List<Schema> Schemas { get; set; } = new();
 }

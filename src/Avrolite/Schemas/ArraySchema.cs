@@ -1,11 +1,6 @@
 ﻿namespace Avrolite.Schemas;
 
-internal class ArraySchema : UnnamedSchema
+internal class ArraySchema() : UnnamedSchema(SchemaType.Array)
 {
-    public ArraySchema()
-        : base(SchemaType.Array)
-    {
-    }
-
     public Schema ItemSchema { get; set; }
 }

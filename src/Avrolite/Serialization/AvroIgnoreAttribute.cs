@@ -1,6 +1,4 @@
 ﻿namespace Avrolite.Serialization;
 
 [AttributeUsage(AttributeTargets.Property)]
-public class AvroIgnoreAttribute : AvroAttribute
-{
-}
+public class AvroIgnoreAttribute : AvroAttribute;

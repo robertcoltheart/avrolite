@@ -1,6 +1,3 @@
 ﻿namespace Avrolite.Serialization.Metadata.Types;
 
-internal class DecimalType : LogicalType
-{
-
-}
+internal class DecimalType : LogicalType;

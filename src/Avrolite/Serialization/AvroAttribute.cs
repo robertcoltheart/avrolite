@@ -1,5 +1,3 @@
 ﻿namespace Avrolite.Serialization;
 
-public abstract class AvroAttribute : Attribute
-{
-}
+public abstract class AvroAttribute : Attribute;

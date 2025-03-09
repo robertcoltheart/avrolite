@@ -1,9 +1,3 @@
 ﻿namespace Avrolite;
 
-internal sealed class AvroReaderException : AvroException
-{
-    public AvroReaderException(string? message)
-        : base(message)
-    {
-    }
-}
+internal sealed class AvroReaderException(string? message) : AvroException(message);

@@ -11,12 +11,10 @@ internal class SchemaNames
 
     public bool Add(string name, NamedSchema schema)
     {
-        if (Names.ContainsKey(name))
+        if (!Names.TryAdd(name, schema))
         {
             return false;
         }
-
-        Names.Add(name, schema);
 
         return true;
     }

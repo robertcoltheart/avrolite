@@ -1,6 +1,3 @@
 ﻿namespace Avrolite.Serialization;
 
-public class ObjectContainerEncoder : AvroEncoder
-{
-
-}
+public class ObjectContainerEncoder : AvroEncoder;
