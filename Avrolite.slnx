@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Example/">
+    <Project Path="src/Avrolite.Example/Avrolite.Example.csproj" />
+  </Folder>
+  <Project Path="src/Avrolite.Benchmark/Avrolite.Benchmark.csproj" />
+  <Project Path="src/Avrolite.Tests/Avrolite.Tests.csproj" />
+  <Project Path="src/Avrolite/Avrolite.csproj" />
+</Solution>
