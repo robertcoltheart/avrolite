@@ -1,4 +1,4 @@
-﻿using Avrolite.Serialization.Metadata;
+using Avrolite.Serialization.Metadata;
 
 namespace Avrolite;
 
@@ -9,12 +9,12 @@ public static class AvroSerializer
         throw new NotImplementedException();
     }
 
-    public static object? Deserialize(ref AvroReader reader, Type returnType, AvroSerializerOptions? options = default)
+    public static object? Deserialize(ref AvroReader reader, Type returnType, AvroSerializerOptions? options = null)
     {
         throw new NotImplementedException();
     }
 
-    public static object? Deserialize(byte[] data, Type returnType, AvroSerializerOptions? options = default)
+    public static object? Deserialize(byte[] data, Type returnType, AvroSerializerOptions? options = null)
     {
         throw new NotImplementedException();
     }
@@ -34,7 +34,7 @@ public static class AvroSerializer
         throw new NotImplementedException();
     }
 
-    public static object? Deserialize(Stream stream, Type returnType, AvroSerializerOptions? options = default)
+    public static object? Deserialize(Stream stream, Type returnType, AvroSerializerOptions? options = null)
     {
         throw new NotImplementedException();
     }
@@ -44,12 +44,12 @@ public static class AvroSerializer
         throw new NotImplementedException();
     }
 
-    public static TValue? Deserialize<TValue>(ref AvroReader reader, AvroSerializerOptions? options = default)
+    public static TValue? Deserialize<TValue>(ref AvroReader reader, AvroSerializerOptions? options = null)
     {
         throw new NotImplementedException();
     }
 
-    public static TValue? Deserialize<TValue>(byte[] data, AvroSerializerOptions? options = default)
+    public static TValue? Deserialize<TValue>(byte[] data, AvroSerializerOptions? options = null)
     {
         throw new NotImplementedException();
     }
@@ -59,7 +59,7 @@ public static class AvroSerializer
         throw new NotImplementedException();
     }
 
-    public static TValue? Deserialize<TValue>(ReadOnlySpan<byte> data, AvroSerializerOptions? options = default)
+    public static TValue? Deserialize<TValue>(ReadOnlySpan<byte> data, AvroSerializerOptions? options = null)
     {
         throw new NotImplementedException();
     }
@@ -69,7 +69,7 @@ public static class AvroSerializer
         throw new NotImplementedException();
     }
 
-    public static TValue? Deserialize<TValue>(Stream stream, AvroSerializerOptions? options = default)
+    public static TValue? Deserialize<TValue>(Stream stream, AvroSerializerOptions? options = null)
     {
         throw new NotImplementedException();
     }
@@ -84,7 +84,7 @@ public static class AvroSerializer
         throw new NotImplementedException();
     }
 
-    public static ValueTask<object?> DeserializeAsync(Stream stream, Type returnType, AvroSerializerOptions? options = default, CancellationToken cancellationToken = default)
+    public static ValueTask<object?> DeserializeAsync(Stream stream, Type returnType, AvroSerializerOptions? options = null, CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
     }
@@ -94,12 +94,12 @@ public static class AvroSerializer
         throw new NotImplementedException();
     }
 
-    public static ValueTask<TValue?> DeserializeAsync<TValue>(Stream stream, AvroSerializerOptions? options = default, CancellationToken cancellationToken = default)
+    public static ValueTask<TValue?> DeserializeAsync<TValue>(Stream stream, AvroSerializerOptions? options = null, CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
     }
 
-    public static void Serialize(Stream stream, object? value, Type inputType, AvroSerializerOptions? options = default)
+    public static void Serialize(Stream stream, object? value, Type inputType, AvroSerializerOptions? options = null)
     {
         throw new NotImplementedException();
     }
@@ -109,12 +109,12 @@ public static class AvroSerializer
         throw new NotImplementedException();
     }
 
-    public static void Serialize(AvroWriter writer, object? value, Type inputType, AvroSerializerOptions? options = default)
+    public static void Serialize(AvroWriter writer, object? value, Type inputType, AvroSerializerOptions? options = null)
     {
         throw new NotImplementedException();
     }
 
-    public static byte[] Serialize(object? value, Type inputType, AvroSerializerOptions? options = default)
+    public static byte[] Serialize(object? value, Type inputType, AvroSerializerOptions? options = null)
     {
         throw new NotImplementedException();
     }
@@ -129,7 +129,7 @@ public static class AvroSerializer
         throw new NotImplementedException();
     }
 
-    public static byte[] Serialize<TValue>(TValue value, AvroSerializerOptions? options = default)
+    public static byte[] Serialize<TValue>(TValue value, AvroSerializerOptions? options = null)
     {
         throw new NotImplementedException();
     }
@@ -139,7 +139,7 @@ public static class AvroSerializer
         throw new NotImplementedException();
     }
 
-    public static void Serialize<TValue>(Stream stream, TValue value, AvroSerializerOptions? options = default)
+    public static void Serialize<TValue>(Stream stream, TValue value, AvroSerializerOptions? options = null)
     {
         throw new NotImplementedException();
     }
@@ -149,7 +149,7 @@ public static class AvroSerializer
         throw new NotImplementedException();
     }
 
-    public static void Serialize<TValue>(AvroWriter writer, TValue value, AvroSerializerOptions? options = default)
+    public static void Serialize<TValue>(AvroWriter writer, TValue value, AvroSerializerOptions? options = null)
     {
         throw new NotImplementedException();
     }
@@ -164,7 +164,7 @@ public static class AvroSerializer
         throw new NotImplementedException();
     }
 
-    public static Task SerializeAsync(Stream stream, object? value, Type inputType, AvroSerializerOptions? options = default, CancellationToken cancellationToken = default)
+    public static Task SerializeAsync(Stream stream, object? value, Type inputType, AvroSerializerOptions? options = null, CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
     }
@@ -174,7 +174,7 @@ public static class AvroSerializer
         throw new NotImplementedException();
     }
 
-    public static Task SerializeAsync<TValue>(Stream stream, TValue value, AvroSerializerOptions? options = default, CancellationToken cancellationToken = default)
+    public static Task SerializeAsync<TValue>(Stream stream, TValue value, AvroSerializerOptions? options = null, CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
     }
